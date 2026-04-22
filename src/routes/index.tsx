@@ -141,17 +141,16 @@ function Index() {
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Meet Your Therapist</p>
             <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">
-              Hi, I'm Elina — your path to pain-free living.
+              Hello, I'm Elina — your therapist in Nuneaton.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              I'm a Level 4 qualified massage therapist trained at a Medical University in Latvia. My approach
-              combines clinical insight with deeply restorative techniques — so you don't just feel relaxed, you feel transformed.
+              I'm a Level 4 qualified massage therapist trained at a medical university in Latvia. My approach is calm, attentive and personalised — every session is shaped around how you feel that day, what you'd like to work on, and what your body needs most.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
-                { icon: Award, label: "Certified Therapist" },
-                { icon: GraduationCap, label: "Medical Background" },
-                { icon: ShieldCheck, label: "2+ Years Experience" },
+                { icon: Award, label: "Level 4 Qualified" },
+                { icon: GraduationCap, label: "Medical University Training" },
+                { icon: ShieldCheck, label: "Insured & Confidential" },
               ].map((b) => (
                 <div key={b.label} className="rounded-2xl border border-border bg-card p-4 shadow-card">
                   <b.icon className="mb-2 h-5 w-5 text-primary" />
@@ -160,7 +159,7 @@ function Index() {
               ))}
             </div>
             <Button asChild variant="ghost" className="mt-8 rounded-full px-0 text-primary hover:bg-transparent hover:text-primary-deep">
-              <Link to="/about">Read my full story <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              <Link to="/about">Read more about my approach <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>

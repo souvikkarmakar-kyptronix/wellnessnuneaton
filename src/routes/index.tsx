@@ -318,9 +318,9 @@ function Index() {
       </section>
 
       {/* ENDOSPHERE HIGHLIGHT */}
-      <section className="px-4 py-20 md:px-6 md:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
-          <div className="overflow-hidden rounded-3xl shadow-elegant aspect-[4/5] md:aspect-auto">
+      <section className="px-5 py-16 sm:px-6 sm:py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center md:gap-12">
+          <div className="overflow-hidden rounded-[1.75rem] shadow-elegant aspect-[4/5] md:rounded-3xl md:aspect-auto">
             <video
               src={endosphereVideo.url}
               poster={endosphereImg}
@@ -333,28 +333,28 @@ function Index() {
             />
           </div>
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Featured Treatment</p>
-            <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">Endosphere Therapy</h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-xs">Featured Treatment</p>
+            <h2 className="font-display text-[1.85rem] font-semibold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">Endosphere Therapy</h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground sm:text-base md:text-lg">
               A non-invasive body treatment using compressive micro-vibration. Comfortable sessions, no needles, no downtime — designed to leave you feeling lighter and more cared for.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid grid-cols-3 gap-2.5 sm:gap-3">
               {[
                 { sessions: "3", result: "Skin may feel firmer" },
                 { sessions: "6", result: "Smoother appearance" },
                 { sessions: "12", result: "More refined contour" },
               ].map((p) => (
-                <div key={p.sessions} className="rounded-2xl border border-primary/20 bg-primary-soft p-5 text-center">
-                  <p className="font-display text-3xl font-semibold text-primary-deep">{p.sessions}</p>
-                  <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">Sessions</p>
-                  <p className="mt-2 text-sm font-medium text-foreground">{p.result}</p>
+                <div key={p.sessions} className="rounded-2xl border border-primary/20 bg-primary-soft p-3.5 text-center sm:p-5">
+                  <p className="font-display text-2xl font-semibold text-primary-deep sm:text-3xl">{p.sessions}</p>
+                  <p className="mt-1 text-[9px] uppercase tracking-wider text-muted-foreground sm:text-xs">Sessions</p>
+                  <p className="mt-1.5 text-[11px] font-medium leading-tight text-foreground sm:text-sm">{p.result}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-xs text-muted-foreground">
+            <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
               Indicative outcomes only. Individual results vary and are not guaranteed. A complimentary consultation is offered before any course begins.
             </p>
-            <Button asChild className="mt-8 rounded-full" size="lg">
+            <Button asChild className="mt-7 h-12 w-full rounded-full sm:w-auto" size="lg">
               <Link to="/endosphere">View Treatment Plans <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>
@@ -362,28 +362,28 @@ function Index() {
       </section>
 
       {/* LASER PRICING */}
-      <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
+      <section className="bg-gradient-soft px-5 py-16 sm:px-6 sm:py-20 md:py-28">
         <SectionHeader eyebrow="Laser Hair Removal" title="Smoother skin, quietly assured" subtitle="Comfortable sessions with a tailored consultation. Suitability and results are confirmed at your patch test." />
-        <div className="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-3 sm:mt-14 sm:gap-5 lg:grid-cols-4">
           {[
             { area: "Chest", price: "£80" },
             { area: "Stomach", price: "£80" },
             { area: "Full Leg", price: "£120" },
             { area: "Full Back", price: "£120" },
           ].map((p) => (
-            <div key={p.area} className="rounded-3xl border border-border bg-card p-7 text-center shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">From</p>
-              <p className="mt-1 font-display text-4xl font-semibold text-primary-deep">{p.price}</p>
-              <p className="mt-3 text-base font-medium text-foreground">{p.area}</p>
+            <div key={p.area} className="rounded-2xl border border-border bg-card p-5 text-center shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant sm:rounded-3xl sm:p-7">
+              <p className="text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs">From</p>
+              <p className="mt-1 font-display text-3xl font-semibold text-primary-deep sm:text-4xl">{p.price}</p>
+              <p className="mt-2 text-sm font-medium text-foreground sm:mt-3 sm:text-base">{p.area}</p>
             </div>
           ))}
         </div>
-        <div className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-5 gap-y-2.5 text-xs text-muted-foreground sm:mt-10 sm:gap-x-8 sm:gap-y-3 sm:text-sm">
           {["Tailored to your skin", "Discreet & private", "Patch test included", "Qualified operator"].map((b) => (
             <span key={b} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {b}</span>
           ))}
         </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-2xl px-2 text-center text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
           Suitability is confirmed at consultation. Results vary by skin type, hair colour and individual response. Not a medical treatment.
         </p>
       </section>

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, GraduationCap, ShieldCheck, Sparkles, Star, Check } from "lucide-react";
+import { ArrowRight, Award, GraduationCap, ShieldCheck, Sparkles, Star, Check, Instagram, Facebook, Heart, MessageCircle, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/lead-form";
 import { SectionHeader } from "@/components/section-header";
@@ -49,6 +49,32 @@ const testimonials = [
   { name: "Joanne K.", quote: "Endosphere changed my legs after 6 sessions — visible, real results.", tag: "Confidence" },
   { name: "Mark R.", quote: "Best sports massage in Nuneaton. I recover twice as fast now.", tag: "Recovery" },
 ];
+
+const socialPosts = [
+  { platform: "instagram" as const, img: endosphereImg, caption: "Endosphere results after 6 sessions ✨", likes: "1.2k", comments: 84, time: "2h", url: "https://instagram.com" },
+  { platform: "tiktok" as const, img: deepTissue, caption: "POV: 60 min of pure relief 💆‍♀️", likes: "8.4k", comments: 312, time: "5h", url: "https://tiktok.com" },
+  { platform: "facebook" as const, img: laserImg, caption: "Spring offer — 20% off laser hair removal", likes: "342", comments: 27, time: "1d", url: "https://facebook.com" },
+  { platform: "instagram" as const, img: hotStone, caption: "Hot stone Mondays 🔥 Limited slots open", likes: "956", comments: 41, time: "1d", url: "https://instagram.com" },
+  { platform: "tiktok" as const, img: lymphatic, caption: "Lymphatic drainage — before & after", likes: "12.1k", comments: 528, time: "2d", url: "https://tiktok.com" },
+  { platform: "facebook" as const, img: sportsMassage, caption: "Helping local athletes recover faster", likes: "418", comments: 33, time: "3d", url: "https://facebook.com" },
+];
+
+const socialChannels = [
+  { platform: "instagram" as const, handle: "@relaxify.nuneaton", followers: "8.4k", url: "https://instagram.com" },
+  { platform: "facebook" as const, handle: "Relaxify Wellness", followers: "3.2k", url: "https://facebook.com" },
+  { platform: "tiktok" as const, handle: "@relaxify", followers: "12.6k", url: "https://tiktok.com" },
+];
+
+function PlatformIcon({ platform, className }: { platform: "instagram" | "facebook" | "tiktok"; className?: string }) {
+  if (platform === "instagram") return <Instagram className={className} />;
+  if (platform === "facebook") return <Facebook className={className} />;
+  // TikTok — inline SVG (lucide has no tiktok)
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.27a8.16 8.16 0 0 0 4.77 1.52V6.34a4.85 4.85 0 0 1-1.84-.35z" />
+    </svg>
+  );
+}
 
 function Index() {
   return (
@@ -384,6 +410,101 @@ function Index() {
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t.tag}</span>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL FEED */}
+      <section className="px-4 py-20 md:px-6 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
+                <Sparkles className="h-3.5 w-3.5 text-primary" /> Daily updates
+              </span>
+              <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+                Follow our journey<br />
+                <span className="text-muted-foreground">on social media</span>
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+                Tips, transformations and behind-the-scenes — fresh posts every day across Instagram, Facebook and TikTok.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {socialChannels.map((c) => (
+                <a
+                  key={c.platform}
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:shadow-elegant"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background transition group-hover:bg-primary">
+                    <PlatformIcon platform={c.platform} className="h-5 w-5" />
+                  </span>
+                  <span className="text-left">
+                    <span className="block text-sm font-semibold text-foreground">{c.handle}</span>
+                    <span className="block text-xs text-muted-foreground">{c.followers} followers</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Posts grid */}
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {socialPosts.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:-translate-y-1 hover:shadow-elegant"
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.caption}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                  {/* Platform badge */}
+                  <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-soft backdrop-blur">
+                    <PlatformIcon platform={p.platform} className="h-3.5 w-3.5" />
+                    <span className="capitalize">{p.platform}</span>
+                  </div>
+
+                  {/* Time badge */}
+                  <div className="absolute right-4 top-4 rounded-full bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white backdrop-blur">
+                    {p.time}
+                  </div>
+
+                  {/* Play icon for tiktok */}
+                  {p.platform === "tiktok" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-elegant">
+                        <Play className="h-6 w-6 fill-foreground text-foreground" />
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Caption + stats */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="line-clamp-2 text-sm font-medium leading-snug">{p.caption}</p>
+                    <div className="mt-3 flex items-center gap-4 text-xs">
+                      <span className="flex items-center gap-1.5">
+                        <Heart className="h-3.5 w-3.5 fill-white" /> {p.likes}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MessageCircle className="h-3.5 w-3.5" /> {p.comments}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
             ))}
           </div>
         </div>

@@ -497,8 +497,8 @@ function Index() {
       </section>
 
       {/* TESTIMONIALS — FLOATING COLLAGE */}
-      <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-border bg-card px-4 py-16 shadow-card md:px-8 md:py-20">
+      <section className="bg-gradient-soft px-4 py-16 sm:px-6 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] border border-border bg-card px-4 py-12 shadow-card sm:rounded-[2.5rem] sm:py-16 md:px-8 md:py-20">
           {/* Floating portraits zone (decorative, fixed height) */}
           <div className="relative mx-auto hidden h-[360px] w-full sm:block md:h-[420px]" aria-hidden="true">
             {[
@@ -539,37 +539,39 @@ function Index() {
 
           {/* Centered content */}
           <div className="mt-2 flex flex-col items-center text-center sm:mt-10">
-            <span className="rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
+            <span className="rounded-full border border-border bg-background px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft sm:px-4 sm:text-xs">
               Testimonials
             </span>
-            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+            <h2 className="mt-5 font-display text-[2rem] font-semibold leading-[1.05] text-foreground sm:mt-6 sm:text-4xl md:text-5xl lg:text-6xl">
               Trusted quietly by clients<br />
               <span className="text-muted-foreground">across Nuneaton</span>
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted-foreground sm:mt-5 sm:text-base md:text-lg">
               Honest words from people I've cared for. Shared with consent — names shortened to protect privacy. Individual experiences vary.
             </p>
-            <Button asChild size="lg" className="mt-8 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
+            <Button asChild size="lg" className="mt-7 h-12 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90 tap-highlight-none">
               <Link to="/contact">
                 Read More Reviews <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
           </div>
 
-          {/* Quotes row */}
-          <div className="mx-auto mt-14 grid w-full max-w-5xl gap-5 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl border border-border bg-background p-6 text-left shadow-soft">
-                <div className="flex gap-1 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+          {/* Quotes — snap-scroll on mobile, grid on tablet+ */}
+          <div className="-mx-4 mt-10 sm:mx-0 sm:mt-14">
+            <div className="scroll-snap-x flex gap-4 overflow-x-auto px-4 pb-2 sm:mx-auto sm:grid sm:max-w-5xl sm:grid-cols-3 sm:gap-5 sm:overflow-visible sm:px-0">
+              {testimonials.map((t) => (
+                <div key={t.name} className="snap-card w-[82%] flex-none rounded-2xl border border-border bg-background p-5 text-left shadow-soft sm:w-auto sm:p-6">
+                  <div className="flex gap-1 text-primary">
+                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground">"{t.quote}"</p>
+                  <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                    <p className="text-xs font-medium">{t.name}</p>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t.tag}</span>
+                  </div>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-foreground">"{t.quote}"</p>
-                <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
-                  <p className="text-xs font-medium">{t.name}</p>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t.tag}</span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

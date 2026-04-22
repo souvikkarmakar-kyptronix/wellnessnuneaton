@@ -350,36 +350,78 @@ function Index() {
       </section>
 
       {/* RESULTS / BEFORE-AFTER */}
-      <section className="px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Indicative Journey" title="A typical Endosphere course" subtitle="Illustrative milestones only. No needles, no downtime — individual results vary." />
-        <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
-          {[
-            { label: "Around session 3", desc: "Skin may feel firmer & better hydrated", pct: "Stage 1", img: gymStage1 },
-            { label: "Around session 6", desc: "Smoother, more even appearance", pct: "Stage 2", img: gymStage2 },
-            { label: "Around session 12", desc: "More refined, toned contour", pct: "Stage 3", img: gymStage3 },
-          ].map((r, i) => (
-            <div key={r.label} className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
-              <div className="relative h-72 overflow-hidden">
-                <img src={r.img} alt={r.label} loading="lazy" width={768} height={768} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <div className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-primary shadow-soft">
-                  Stage {i + 1}
-                </div>
-                <div className="absolute left-4 bottom-4 rounded-2xl bg-white/95 px-4 py-2 text-left shadow-soft backdrop-blur">
-                  <p className="font-display text-lg font-semibold text-primary-deep leading-none">{r.pct}</p>
-                  <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">indicative</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-lg font-semibold">{r.label}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{r.desc}</p>
-              </div>
+      {/* INDICATIVE JOURNEY — editorial timeline */}
+      <section className="relative overflow-hidden px-4 py-20 md:px-6 md:py-28">
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-xl">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary">— Indicative Journey</p>
+              <h2 className="font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+                A typical<br />
+                <span className="italic text-primary">Endosphere</span> course.
+              </h2>
             </div>
-          ))}
+            <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
+              Illustrative milestones only. No needles, no downtime — individual results vary and are confirmed at your complimentary consultation.
+            </p>
+          </div>
+
+          <div className="relative mt-20 grid gap-10 md:grid-cols-3 md:gap-6">
+            {/* Connecting line — desktop only */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute left-0 right-0 top-3 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent md:block"
+            />
+
+            {[
+              { session: "03", label: "Settling in", desc: "Skin may feel firmer and better hydrated as the body adjusts to the rhythm of treatment.", img: gymStage1 },
+              { session: "06", label: "Mid-course", desc: "A smoother, more even appearance — many clients notice they simply feel lighter in their skin.", img: gymStage2 },
+              { session: "12", label: "Refined", desc: "A more toned, refined contour. The course completes with a personalised maintenance plan.", img: gymStage3 },
+            ].map((s, i) => (
+              <div key={s.session} className="relative">
+                {/* Timeline dot + session label */}
+                <div className="mb-8 flex items-center gap-4 md:flex-col md:items-center md:gap-3">
+                  <span className="relative grid h-6 w-6 place-items-center rounded-full bg-background ring-1 ring-primary/30 md:h-7 md:w-7">
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                  </span>
+                  <span className="font-display text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
+                    Around session {s.session}
+                  </span>
+                </div>
+
+                <div className="overflow-hidden rounded-[1.75rem] shadow-elegant aspect-[4/5]">
+                  <img
+                    src={s.img}
+                    alt={`Illustrative stage ${i + 1}`}
+                    loading="lazy"
+                    width={640}
+                    height={800}
+                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+
+                <div className="mt-6 flex items-baseline justify-between gap-4">
+                  <h3 className="font-display text-2xl font-semibold leading-tight text-foreground md:text-[1.65rem]">
+                    Stage {i + 1} — {s.label}
+                  </h3>
+                  <span className="shrink-0 rounded-full border border-border bg-card px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    Indicative
+                  </span>
+                </div>
+                <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-16 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
+            Images are illustrative and do not depict named clients. Outcomes vary by individual; nothing here constitutes a medical claim or guarantee.
+          </p>
         </div>
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-foreground">
-          Images are illustrative and not of named clients. Individual results vary and are not guaranteed.
-        </p>
       </section>
 
       {/* TESTIMONIALS — FLOATING COLLAGE */}

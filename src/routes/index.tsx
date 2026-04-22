@@ -13,6 +13,14 @@ import lymphatic from "@/assets/lymphatic.jpg";
 import endosphereImg from "@/assets/endosphere.jpg";
 import laserImg from "@/assets/laser.jpg";
 import waxingImg from "@/assets/waxing.jpg";
+import client1 from "@/assets/client-1.jpg";
+import client2 from "@/assets/client-2.jpg";
+import client3 from "@/assets/client-3.jpg";
+import client4 from "@/assets/client-4.jpg";
+import client5 from "@/assets/client-5.jpg";
+import client6 from "@/assets/client-6.jpg";
+import client7 from "@/assets/client-7.jpg";
+import client8 from "@/assets/client-8.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -303,22 +311,82 @@ function Index() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* TESTIMONIALS — FLOATING COLLAGE */}
       <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Client Stories" title="Trusted by clients across Nuneaton" />
-        <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <div key={t.name} className="rounded-3xl border border-border bg-card p-7 shadow-card">
-              <div className="flex gap-1 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-border bg-card px-4 py-16 shadow-card md:px-8 md:py-20">
+          <div className="relative mx-auto min-h-[640px] md:min-h-[720px]">
+            {/* Floating portraits — absolute positioned around centered text */}
+            {[
+              { img: client1, top: "2%", left: "2%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0s" },
+              { img: client2, top: "0%", left: "16%", w: "h-32 w-28 md:h-44 md:w-36", delay: "0.4s" },
+              { img: client3, top: "20%", left: "8%", w: "h-32 w-28 md:h-40 md:w-32", delay: "0.8s" },
+              { img: client4, top: "10%", left: "30%", w: "h-28 w-24 md:h-36 md:w-32", delay: "1.2s" },
+              { img: client5, top: "4%", left: "44%", w: "h-32 w-28 md:h-44 md:w-36", delay: "0.2s" },
+              { img: client6, top: "8%", right: "30%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0.6s" },
+              { img: client7, top: "0%", right: "14%", w: "h-32 w-28 md:h-44 md:w-36", delay: "1s" },
+              { img: client8, top: "2%", right: "2%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0.5s" },
+              { img: client2, top: "32%", right: "6%", w: "h-32 w-28 md:h-40 md:w-32", delay: "1.4s" },
+              { img: client4, top: "30%", right: "22%", w: "h-32 w-28 md:h-40 md:w-32", delay: "0.3s" },
+            ].map((p, i) => (
+              <div
+                key={i}
+                className={`absolute overflow-hidden rounded-2xl border border-border bg-card shadow-elegant animate-float ${p.w} hidden sm:block`}
+                style={{
+                  top: p.top,
+                  left: p.left,
+                  right: p.right,
+                  animationDelay: p.delay,
+                  animationDuration: `${5 + (i % 4)}s`,
+                }}
+              >
+                <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover" />
               </div>
-              <p className="mt-4 text-base leading-relaxed text-foreground">"{t.quote}"</p>
-              <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-                <p className="text-sm font-medium">{t.name}</p>
-                <span className="rounded-full bg-primary-soft px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary-deep">{t.tag}</span>
+            ))}
+
+            {/* Mobile fallback strip */}
+            <div className="mb-8 flex justify-center gap-2 sm:hidden">
+              {[client1, client4, client5, client7, client8].map((img, i) => (
+                <div key={i} className="h-16 w-14 overflow-hidden rounded-xl border border-border shadow-card">
+                  <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
+                </div>
+              ))}
+            </div>
+
+            {/* Centered content */}
+            <div className="relative z-10 flex flex-col items-center pt-0 text-center sm:pt-[26rem] md:pt-[28rem]">
+              <span className="rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
+                Testimonials
+              </span>
+              <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+                Trusted by clients<br />
+                <span className="text-muted-foreground">across Nuneaton</span>
+              </h2>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+                Real people, real results. From chronic pain relief to confidence-boosting transformations.
+              </p>
+              <Button asChild size="lg" className="mt-8 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
+                <Link to="/contact">
+                  Read Success Stories <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+
+              {/* Quotes row underneath */}
+              <div className="mt-14 grid w-full max-w-5xl gap-5 md:grid-cols-3">
+                {testimonials.map((t) => (
+                  <div key={t.name} className="rounded-2xl border border-border bg-background p-6 text-left shadow-soft">
+                    <div className="flex gap-1 text-primary">
+                      {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-foreground">"{t.quote}"</p>
+                    <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                      <p className="text-xs font-medium">{t.name}</p>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t.tag}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 

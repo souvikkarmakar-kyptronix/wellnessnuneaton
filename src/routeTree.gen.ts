@@ -9,38 +9,233 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WaxingRouteImport } from './routes/waxing'
+import { Route as TreatmentsRouteImport } from './routes/treatments'
+import { Route as LaserHairRemovalRouteImport } from './routes/laser-hair-removal'
+import { Route as EndosphereRouteImport } from './routes/endosphere'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TreatmentsSportsMassageRouteImport } from './routes/treatments.sports-massage'
+import { Route as TreatmentsLymphaticDrainageRouteImport } from './routes/treatments.lymphatic-drainage'
+import { Route as TreatmentsHotStoneMassageRouteImport } from './routes/treatments.hot-stone-massage'
+import { Route as TreatmentsDeepTissueMassageRouteImport } from './routes/treatments.deep-tissue-massage'
 
+const WaxingRoute = WaxingRouteImport.update({
+  id: '/waxing',
+  path: '/waxing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreatmentsRoute = TreatmentsRouteImport.update({
+  id: '/treatments',
+  path: '/treatments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaserHairRemovalRoute = LaserHairRemovalRouteImport.update({
+  id: '/laser-hair-removal',
+  path: '/laser-hair-removal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EndosphereRoute = EndosphereRouteImport.update({
+  id: '/endosphere',
+  path: '/endosphere',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TreatmentsSportsMassageRoute = TreatmentsSportsMassageRouteImport.update({
+  id: '/sports-massage',
+  path: '/sports-massage',
+  getParentRoute: () => TreatmentsRoute,
+} as any)
+const TreatmentsLymphaticDrainageRoute =
+  TreatmentsLymphaticDrainageRouteImport.update({
+    id: '/lymphatic-drainage',
+    path: '/lymphatic-drainage',
+    getParentRoute: () => TreatmentsRoute,
+  } as any)
+const TreatmentsHotStoneMassageRoute =
+  TreatmentsHotStoneMassageRouteImport.update({
+    id: '/hot-stone-massage',
+    path: '/hot-stone-massage',
+    getParentRoute: () => TreatmentsRoute,
+  } as any)
+const TreatmentsDeepTissueMassageRoute =
+  TreatmentsDeepTissueMassageRouteImport.update({
+    id: '/deep-tissue-massage',
+    path: '/deep-tissue-massage',
+    getParentRoute: () => TreatmentsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/endosphere': typeof EndosphereRoute
+  '/laser-hair-removal': typeof LaserHairRemovalRoute
+  '/treatments': typeof TreatmentsRouteWithChildren
+  '/waxing': typeof WaxingRoute
+  '/treatments/deep-tissue-massage': typeof TreatmentsDeepTissueMassageRoute
+  '/treatments/hot-stone-massage': typeof TreatmentsHotStoneMassageRoute
+  '/treatments/lymphatic-drainage': typeof TreatmentsLymphaticDrainageRoute
+  '/treatments/sports-massage': typeof TreatmentsSportsMassageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/endosphere': typeof EndosphereRoute
+  '/laser-hair-removal': typeof LaserHairRemovalRoute
+  '/treatments': typeof TreatmentsRouteWithChildren
+  '/waxing': typeof WaxingRoute
+  '/treatments/deep-tissue-massage': typeof TreatmentsDeepTissueMassageRoute
+  '/treatments/hot-stone-massage': typeof TreatmentsHotStoneMassageRoute
+  '/treatments/lymphatic-drainage': typeof TreatmentsLymphaticDrainageRoute
+  '/treatments/sports-massage': typeof TreatmentsSportsMassageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/endosphere': typeof EndosphereRoute
+  '/laser-hair-removal': typeof LaserHairRemovalRoute
+  '/treatments': typeof TreatmentsRouteWithChildren
+  '/waxing': typeof WaxingRoute
+  '/treatments/deep-tissue-massage': typeof TreatmentsDeepTissueMassageRoute
+  '/treatments/hot-stone-massage': typeof TreatmentsHotStoneMassageRoute
+  '/treatments/lymphatic-drainage': typeof TreatmentsLymphaticDrainageRoute
+  '/treatments/sports-massage': typeof TreatmentsSportsMassageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/endosphere'
+    | '/laser-hair-removal'
+    | '/treatments'
+    | '/waxing'
+    | '/treatments/deep-tissue-massage'
+    | '/treatments/hot-stone-massage'
+    | '/treatments/lymphatic-drainage'
+    | '/treatments/sports-massage'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/endosphere'
+    | '/laser-hair-removal'
+    | '/treatments'
+    | '/waxing'
+    | '/treatments/deep-tissue-massage'
+    | '/treatments/hot-stone-massage'
+    | '/treatments/lymphatic-drainage'
+    | '/treatments/sports-massage'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/endosphere'
+    | '/laser-hair-removal'
+    | '/treatments'
+    | '/waxing'
+    | '/treatments/deep-tissue-massage'
+    | '/treatments/hot-stone-massage'
+    | '/treatments/lymphatic-drainage'
+    | '/treatments/sports-massage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRoute
+  ContactRoute: typeof ContactRoute
+  EndosphereRoute: typeof EndosphereRoute
+  LaserHairRemovalRoute: typeof LaserHairRemovalRoute
+  TreatmentsRoute: typeof TreatmentsRouteWithChildren
+  WaxingRoute: typeof WaxingRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/waxing': {
+      id: '/waxing'
+      path: '/waxing'
+      fullPath: '/waxing'
+      preLoaderRoute: typeof WaxingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treatments': {
+      id: '/treatments'
+      path: '/treatments'
+      fullPath: '/treatments'
+      preLoaderRoute: typeof TreatmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laser-hair-removal': {
+      id: '/laser-hair-removal'
+      path: '/laser-hair-removal'
+      fullPath: '/laser-hair-removal'
+      preLoaderRoute: typeof LaserHairRemovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/endosphere': {
+      id: '/endosphere'
+      path: '/endosphere'
+      fullPath: '/endosphere'
+      preLoaderRoute: typeof EndosphereRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,12 +243,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/treatments/sports-massage': {
+      id: '/treatments/sports-massage'
+      path: '/sports-massage'
+      fullPath: '/treatments/sports-massage'
+      preLoaderRoute: typeof TreatmentsSportsMassageRouteImport
+      parentRoute: typeof TreatmentsRoute
+    }
+    '/treatments/lymphatic-drainage': {
+      id: '/treatments/lymphatic-drainage'
+      path: '/lymphatic-drainage'
+      fullPath: '/treatments/lymphatic-drainage'
+      preLoaderRoute: typeof TreatmentsLymphaticDrainageRouteImport
+      parentRoute: typeof TreatmentsRoute
+    }
+    '/treatments/hot-stone-massage': {
+      id: '/treatments/hot-stone-massage'
+      path: '/hot-stone-massage'
+      fullPath: '/treatments/hot-stone-massage'
+      preLoaderRoute: typeof TreatmentsHotStoneMassageRouteImport
+      parentRoute: typeof TreatmentsRoute
+    }
+    '/treatments/deep-tissue-massage': {
+      id: '/treatments/deep-tissue-massage'
+      path: '/deep-tissue-massage'
+      fullPath: '/treatments/deep-tissue-massage'
+      preLoaderRoute: typeof TreatmentsDeepTissueMassageRouteImport
+      parentRoute: typeof TreatmentsRoute
+    }
   }
 }
 
+interface TreatmentsRouteChildren {
+  TreatmentsDeepTissueMassageRoute: typeof TreatmentsDeepTissueMassageRoute
+  TreatmentsHotStoneMassageRoute: typeof TreatmentsHotStoneMassageRoute
+  TreatmentsLymphaticDrainageRoute: typeof TreatmentsLymphaticDrainageRoute
+  TreatmentsSportsMassageRoute: typeof TreatmentsSportsMassageRoute
+}
+
+const TreatmentsRouteChildren: TreatmentsRouteChildren = {
+  TreatmentsDeepTissueMassageRoute: TreatmentsDeepTissueMassageRoute,
+  TreatmentsHotStoneMassageRoute: TreatmentsHotStoneMassageRoute,
+  TreatmentsLymphaticDrainageRoute: TreatmentsLymphaticDrainageRoute,
+  TreatmentsSportsMassageRoute: TreatmentsSportsMassageRoute,
+}
+
+const TreatmentsRouteWithChildren = TreatmentsRoute._addFileChildren(
+  TreatmentsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BlogRoute: BlogRoute,
+  ContactRoute: ContactRoute,
+  EndosphereRoute: EndosphereRoute,
+  LaserHairRemovalRoute: LaserHairRemovalRoute,
+  TreatmentsRoute: TreatmentsRouteWithChildren,
+  WaxingRoute: WaxingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

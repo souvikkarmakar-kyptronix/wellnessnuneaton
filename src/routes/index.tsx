@@ -166,29 +166,68 @@ function Index() {
       </section>
 
       {/* SERVICES — BENTO */}
-      <section className="relative overflow-hidden px-4 py-20 md:px-6 md:py-28">
+      <section className="relative overflow-hidden py-16 sm:py-20 md:py-28">
         <div aria-hidden className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end md:gap-6">
             <div className="max-w-xl">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">— Our Services</p>
-              <h2 className="font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-xs">— Our Services</p>
+              <h2 className="font-display text-[2rem] font-semibold leading-[1.05] text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
                 Considered for your <span className="italic text-primary">body</span>,<br />
                 shaped around <span className="italic text-primary">you</span>.
               </h2>
             </div>
-            <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
+            <p className="max-w-sm text-[15px] leading-relaxed text-muted-foreground sm:text-base">
               Seven signature treatments — from focused therapeutic massage to gentle, non-invasive body care. Tap any tile to learn more.
             </p>
           </div>
 
-          <div className="mt-14 grid auto-rows-[minmax(0,1fr)] gap-4 md:grid-cols-6 md:gap-5">
+          {/* Mobile: horizontal snap-scroll (iOS card stack feel) */}
+          <div className="-mx-5 mt-10 sm:hidden">
+            <div className="scroll-snap-x flex gap-4 overflow-x-auto px-5 pb-2">
+              {[
+                { to: "/endosphere", title: "Endosphere", desc: "Non-invasive body treatment", img: endosphereImg, video: endosphereVideo.url, featured: true },
+                { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Focused tension relief", img: deepTissue, video: deepTissueVideo.url },
+                { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Mobility & recovery", img: sportsMassage, video: sportsMassageVideo.url },
+                { to: "/laser-hair-removal", title: "Laser", desc: "Smoother skin", img: laserImg, video: laserVideo.url },
+                { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Soothing warmth", img: hotStone, video: hotStoneVideo.url },
+                { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Light & rhythmic", img: lymphatic, video: lymphaticVideo.url },
+                { to: "/waxing", title: "Waxing", desc: "Precise & discreet", img: waxingImg, video: waxingVideo.url },
+              ].map((s) => (
+                <Link
+                  key={s.to}
+                  to={s.to}
+                  className="snap-card relative w-[78%] flex-none overflow-hidden rounded-[1.5rem] bg-card shadow-card tap-highlight-none"
+                >
+                  <div className="relative aspect-[4/5]">
+                    <video src={s.video} poster={s.img} autoPlay muted loop playsInline preload="metadata" className="h-full w-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/95 text-primary shadow-soft">
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                    {s.featured && (
+                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-primary-foreground">
+                        <Sparkles className="h-2.5 w-2.5" /> Featured
+                      </span>
+                    )}
+                    <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                      <h3 className="font-display text-xl font-semibold leading-tight">{s.title}</h3>
+                      <p className="mt-0.5 text-xs text-white/85">{s.desc}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Tablet+ : original bento grid */}
+          <div className="mt-14 hidden auto-rows-[minmax(0,1fr)] gap-4 sm:grid sm:grid-cols-6 sm:gap-5">
             {/* Featured large card — Endosphere */}
             <Link
               to="/endosphere"
-              className="group relative col-span-1 row-span-2 overflow-hidden rounded-[2rem] bg-primary p-8 text-primary-foreground shadow-elegant transition-smooth hover:-translate-y-1 md:col-span-3 md:row-span-2 md:min-h-[28rem]"
+              className="group relative col-span-6 row-span-2 overflow-hidden rounded-[2rem] bg-primary p-8 text-primary-foreground shadow-elegant transition-smooth hover:-translate-y-1 md:col-span-3 md:row-span-2 md:min-h-[28rem]"
             >
               <div className="absolute inset-0 -z-10 opacity-30 mix-blend-overlay">
                 <video

@@ -21,6 +21,9 @@ import client5 from "@/assets/client-5.jpg";
 import client6 from "@/assets/client-6.jpg";
 import client7 from "@/assets/client-7.jpg";
 import client8 from "@/assets/client-8.jpg";
+import resultStage1 from "@/assets/result-stage-1.jpg";
+import resultStage2 from "@/assets/result-stage-2.jpg";
+import resultStage3 from "@/assets/result-stage-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

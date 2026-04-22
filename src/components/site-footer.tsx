@@ -39,10 +39,10 @@ export function SiteFooter() {
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">Visit Us</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> Nuneaton, Warwickshire</li>
-            <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-primary" /> +44 7000 000 000</li>
-            <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" /> hello@relaxify.co.uk</li>
-            <li className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 text-primary" /> Mon–Sat · 9am–7pm</li>
+            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" /><span>Nuneaton, Warwickshire</span></li>
+            <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-primary" /><span>+44 7000 000 000</span></li>
+            <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" /><span>hello@relaxify.co.uk</span></li>
+            <li className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 text-primary" /><span>Mon–Sat · 9am–7pm</span></li>
           </ul>
         </div>
       </div>

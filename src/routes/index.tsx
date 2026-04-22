@@ -314,23 +314,22 @@ function Index() {
       {/* TESTIMONIALS — FLOATING COLLAGE */}
       <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-border bg-card px-4 py-16 shadow-card md:px-8 md:py-20">
-          <div className="relative mx-auto min-h-[640px] md:min-h-[720px]">
-            {/* Floating portraits — absolute positioned around centered text */}
+          {/* Floating portraits zone (decorative, fixed height) */}
+          <div className="relative mx-auto hidden h-[360px] w-full sm:block md:h-[420px]" aria-hidden="true">
             {[
-              { img: client1, top: "2%", left: "2%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0s" },
-              { img: client2, top: "0%", left: "16%", w: "h-32 w-28 md:h-44 md:w-36", delay: "0.4s" },
-              { img: client3, top: "20%", left: "8%", w: "h-32 w-28 md:h-40 md:w-32", delay: "0.8s" },
-              { img: client4, top: "10%", left: "30%", w: "h-28 w-24 md:h-36 md:w-32", delay: "1.2s" },
-              { img: client5, top: "4%", left: "44%", w: "h-32 w-28 md:h-44 md:w-36", delay: "0.2s" },
-              { img: client6, top: "8%", right: "30%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0.6s" },
-              { img: client7, top: "0%", right: "14%", w: "h-32 w-28 md:h-44 md:w-36", delay: "1s" },
-              { img: client8, top: "2%", right: "2%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0.5s" },
-              { img: client2, top: "32%", right: "6%", w: "h-32 w-28 md:h-40 md:w-32", delay: "1.4s" },
-              { img: client4, top: "30%", right: "22%", w: "h-32 w-28 md:h-40 md:w-32", delay: "0.3s" },
+              { img: client1, top: "4%", left: "2%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0s" },
+              { img: client2, top: "32%", left: "10%", w: "h-32 w-28 md:h-40 md:w-32", delay: "0.4s" },
+              { img: client3, top: "8%", left: "20%", w: "h-32 w-28 md:h-44 md:w-36", delay: "0.8s" },
+              { img: client4, top: "55%", left: "26%", w: "h-24 w-20 md:h-32 md:w-28", delay: "1.2s" },
+              { img: client5, top: "2%", left: "40%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0.2s" },
+              { img: client6, top: "55%", right: "40%", w: "h-24 w-20 md:h-32 md:w-28", delay: "0.6s" },
+              { img: client7, top: "8%", right: "20%", w: "h-32 w-28 md:h-44 md:w-36", delay: "1s" },
+              { img: client8, top: "4%", right: "2%", w: "h-28 w-24 md:h-36 md:w-32", delay: "0.5s" },
+              { img: client2, top: "32%", right: "10%", w: "h-32 w-28 md:h-40 md:w-32", delay: "1.4s" },
             ].map((p, i) => (
               <div
                 key={i}
-                className={`absolute overflow-hidden rounded-2xl border border-border bg-card shadow-elegant animate-float ${p.w} hidden sm:block`}
+                className={`absolute overflow-hidden rounded-2xl border border-border bg-card shadow-elegant animate-float ${p.w}`}
                 style={{
                   top: p.top,
                   left: p.left,
@@ -342,50 +341,50 @@ function Index() {
                 <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover" />
               </div>
             ))}
+          </div>
 
-            {/* Mobile fallback strip */}
-            <div className="mb-8 flex justify-center gap-2 sm:hidden">
-              {[client1, client4, client5, client7, client8].map((img, i) => (
-                <div key={i} className="h-16 w-14 overflow-hidden rounded-xl border border-border shadow-card">
-                  <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
-                </div>
-              ))}
-            </div>
-
-            {/* Centered content */}
-            <div className="relative z-10 flex flex-col items-center pt-0 text-center sm:pt-[26rem] md:pt-[28rem]">
-              <span className="rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
-                Testimonials
-              </span>
-              <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
-                Trusted by clients<br />
-                <span className="text-muted-foreground">across Nuneaton</span>
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                Real people, real results. From chronic pain relief to confidence-boosting transformations.
-              </p>
-              <Button asChild size="lg" className="mt-8 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
-                <Link to="/contact">
-                  Read Success Stories <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-
-              {/* Quotes row underneath */}
-              <div className="mt-14 grid w-full max-w-5xl gap-5 md:grid-cols-3">
-                {testimonials.map((t) => (
-                  <div key={t.name} className="rounded-2xl border border-border bg-background p-6 text-left shadow-soft">
-                    <div className="flex gap-1 text-primary">
-                      {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground">"{t.quote}"</p>
-                    <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
-                      <p className="text-xs font-medium">{t.name}</p>
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t.tag}</span>
-                    </div>
-                  </div>
-                ))}
+          {/* Mobile portrait strip */}
+          <div className="mb-10 flex justify-center gap-2 sm:hidden">
+            {[client1, client4, client5, client7, client8].map((img, i) => (
+              <div key={i} className="h-16 w-14 overflow-hidden rounded-xl border border-border shadow-card">
+                <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* Centered content */}
+          <div className="mt-2 flex flex-col items-center text-center sm:mt-10">
+            <span className="rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
+              Testimonials
+            </span>
+            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+              Trusted by clients<br />
+              <span className="text-muted-foreground">across Nuneaton</span>
+            </h2>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+              Real people, real results. From chronic pain relief to confidence-boosting transformations.
+            </p>
+            <Button asChild size="lg" className="mt-8 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
+              <Link to="/contact">
+                Read Success Stories <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          {/* Quotes row */}
+          <div className="mx-auto mt-14 grid w-full max-w-5xl gap-5 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <div key={t.name} className="rounded-2xl border border-border bg-background p-6 text-left shadow-soft">
+                <div className="flex gap-1 text-primary">
+                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-foreground">"{t.quote}"</p>
+                <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                  <p className="text-xs font-medium">{t.name}</p>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{t.tag}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

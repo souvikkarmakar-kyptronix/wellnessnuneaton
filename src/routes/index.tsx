@@ -13,6 +13,14 @@ import lymphatic from "@/assets/lymphatic.jpg";
 import endosphereImg from "@/assets/endosphere.jpg";
 import laserImg from "@/assets/laser.jpg";
 import waxingImg from "@/assets/waxing.jpg";
+import client1 from "@/assets/client-1.jpg";
+import client2 from "@/assets/client-2.jpg";
+import client3 from "@/assets/client-3.jpg";
+import client4 from "@/assets/client-4.jpg";
+import client5 from "@/assets/client-5.jpg";
+import client6 from "@/assets/client-6.jpg";
+import client7 from "@/assets/client-7.jpg";
+import client8 from "@/assets/client-8.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

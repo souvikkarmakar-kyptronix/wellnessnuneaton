@@ -185,4 +185,13 @@
     50% { transform: translateY(-6px); }
   }
   .animate-float { animation: float 4s ease-in-out infinite; }
+
+  /* iOS-style helpers */
+  .ios-blur { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+  .safe-pb { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .safe-pt { padding-top: max(0.5rem, env(safe-area-inset-top)); }
+  .scroll-snap-x { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .scroll-snap-x::-webkit-scrollbar { display: none; }
+  .snap-card { scroll-snap-align: center; }
+  .tap-highlight-none { -webkit-tap-highlight-color: transparent; }
 }

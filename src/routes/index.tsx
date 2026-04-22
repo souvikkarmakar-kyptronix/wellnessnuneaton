@@ -429,15 +429,15 @@ function Index() {
               Testimonials
             </span>
             <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
-              Trusted by clients<br />
+              Trusted quietly by clients<br />
               <span className="text-muted-foreground">across Nuneaton</span>
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-              Real people, real results. From chronic pain relief to confidence-boosting transformations.
+              Honest words from people I've cared for. Shared with consent — names shortened to protect privacy. Individual experiences vary.
             </p>
             <Button asChild size="lg" className="mt-8 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
               <Link to="/contact">
-                Read Success Stories <ArrowRight className="ml-1 h-4 w-4" />
+                Read More Reviews <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
           </div>

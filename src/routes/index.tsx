@@ -50,6 +50,32 @@ const testimonials = [
   { name: "Mark R.", quote: "Best sports massage in Nuneaton. I recover twice as fast now.", tag: "Recovery" },
 ];
 
+const socialPosts = [
+  { platform: "instagram" as const, img: endosphereImg, caption: "Endosphere results after 6 sessions ✨", likes: "1.2k", comments: 84, time: "2h", url: "https://instagram.com" },
+  { platform: "tiktok" as const, img: deepTissue, caption: "POV: 60 min of pure relief 💆‍♀️", likes: "8.4k", comments: 312, time: "5h", url: "https://tiktok.com" },
+  { platform: "facebook" as const, img: laserImg, caption: "Spring offer — 20% off laser hair removal", likes: "342", comments: 27, time: "1d", url: "https://facebook.com" },
+  { platform: "instagram" as const, img: hotStone, caption: "Hot stone Mondays 🔥 Limited slots open", likes: "956", comments: 41, time: "1d", url: "https://instagram.com" },
+  { platform: "tiktok" as const, img: lymphatic, caption: "Lymphatic drainage — before & after", likes: "12.1k", comments: 528, time: "2d", url: "https://tiktok.com" },
+  { platform: "facebook" as const, img: sportsMassage, caption: "Helping local athletes recover faster", likes: "418", comments: 33, time: "3d", url: "https://facebook.com" },
+];
+
+const socialChannels = [
+  { platform: "instagram" as const, handle: "@relaxify.nuneaton", followers: "8.4k", url: "https://instagram.com" },
+  { platform: "facebook" as const, handle: "Relaxify Wellness", followers: "3.2k", url: "https://facebook.com" },
+  { platform: "tiktok" as const, handle: "@relaxify", followers: "12.6k", url: "https://tiktok.com" },
+];
+
+function PlatformIcon({ platform, className }: { platform: "instagram" | "facebook" | "tiktok"; className?: string }) {
+  if (platform === "instagram") return <Instagram className={className} />;
+  if (platform === "facebook") return <Facebook className={className} />;
+  // TikTok — inline SVG (lucide has no tiktok)
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.27a8.16 8.16 0 0 0 4.77 1.52V6.34a4.85 4.85 0 0 1-1.84-.35z" />
+    </svg>
+  );
+}
+
 function Index() {
   return (
     <>

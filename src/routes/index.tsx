@@ -35,10 +35,10 @@ import gymStage3 from "@/assets/gym-stage-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Massage Nuneaton — Pain Relief, Recovery & Body Care | Relaxify" },
-      { name: "description", content: "Premium therapeutic massage, Endosphere body sculpting & laser hair removal in Nuneaton. Book with Elina, Level 4 qualified therapist. Free consultation." },
-      { property: "og:title", content: "Massage Nuneaton — Relaxify Wellness" },
-      { property: "og:description", content: "Pain Relief. Recovery. Confidence." },
+      { title: "Massage & Body Care in Nuneaton — Relaxify Wellness" },
+      { name: "description", content: "Therapeutic massage, Endosphere body treatments & laser hair removal in Nuneaton. Qualified, discreet care with a complimentary consultation. Individual results vary." },
+      { property: "og:title", content: "Relaxify Wellness — Nuneaton" },
+      { property: "og:description", content: "Considered care. Quiet confidence. Individual results vary." },
     ],
   }),
   component: Index,
@@ -55,9 +55,9 @@ const services = [
 ] as const;
 
 const testimonials = [
-  { name: "Sarah M.", quote: "After 3 sessions my back pain is gone. Elina is incredibly knowledgeable.", tag: "Pain relief" },
-  { name: "Joanne K.", quote: "Endosphere changed my legs after 6 sessions — visible, real results.", tag: "Confidence" },
-  { name: "Mark R.", quote: "Best sports massage in Nuneaton. I recover twice as fast now.", tag: "Recovery" },
+  { name: "Sarah M.", quote: "I left feeling lighter and noticeably less tense. Elina listened carefully and tailored every step.", tag: "Tension relief" },
+  { name: "Joanne K.", quote: "After my Endosphere course my skin felt firmer and smoother — a really considered, professional experience.", tag: "Body confidence" },
+  { name: "Mark R.", quote: "A calm, attentive sports massage. I felt looser and more mobile after the session.", tag: "Recovery" },
 ];
 
 const socialPosts = [
@@ -101,23 +101,23 @@ function Index() {
               <Sparkles className="h-3.5 w-3.5" /> Nuneaton · Wellness Clinic
             </span>
             <h1 className="font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl">
-              Pain Relief.<br />Recovery.<br /><span className="italic text-white/95">Confidence.</span>
+              Considered care.<br />Quiet results.<br /><span className="italic text-white/95">Crafted for you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
-              Advanced therapeutic massage, laser treatments & body sculpting — delivered with medical precision in Nuneaton.
+              Therapeutic massage, laser hair removal & non-invasive body treatments in Nuneaton — delivered with skill, discretion and complete respect for your privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full bg-white text-primary hover:bg-white/95">
-                <Link to="/contact">Book Appointment <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                <Link to="/contact">Book a Session <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full border-white/40 bg-transparent text-white hover:bg-white/10">
-                <Link to="/contact">Get Free Consultation</Link>
+                <Link to="/contact">Request a Complimentary Consultation</Link>
               </Button>
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/85">
-              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Certified Therapist</span>
-              <span className="flex items-center gap-2"><GraduationCap className="h-4 w-4" /> Medical University Trained</span>
-              <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-current" /> 5.0 Reviews</span>
+              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Qualified Therapist</span>
+              <span className="flex items-center gap-2"><GraduationCap className="h-4 w-4" /> Trained at a Medical University</span>
+              <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-current" /> Highly Rated by Local Clients</span>
             </div>
           </div>
           <div className="lg:pl-6">
@@ -141,17 +141,16 @@ function Index() {
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Meet Your Therapist</p>
             <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">
-              Hi, I'm Elina — your path to pain-free living.
+              Hello, I'm Elina — your therapist in Nuneaton.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              I'm a Level 4 qualified massage therapist trained at a Medical University in Latvia. My approach
-              combines clinical insight with deeply restorative techniques — so you don't just feel relaxed, you feel transformed.
+              I'm a Level 4 qualified massage therapist trained at a medical university in Latvia. My approach is calm, attentive and personalised — every session is shaped around how you feel that day, what you'd like to work on, and what your body needs most.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
-                { icon: Award, label: "Certified Therapist" },
-                { icon: GraduationCap, label: "Medical Background" },
-                { icon: ShieldCheck, label: "2+ Years Experience" },
+                { icon: Award, label: "Level 4 Qualified" },
+                { icon: GraduationCap, label: "Medical University Training" },
+                { icon: ShieldCheck, label: "Insured & Confidential" },
               ].map((b) => (
                 <div key={b.label} className="rounded-2xl border border-border bg-card p-4 shadow-card">
                   <b.icon className="mb-2 h-5 w-5 text-primary" />
@@ -160,7 +159,7 @@ function Index() {
               ))}
             </div>
             <Button asChild variant="ghost" className="mt-8 rounded-full px-0 text-primary hover:bg-transparent hover:text-primary-deep">
-              <Link to="/about">Read my full story <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              <Link to="/about">Read more about my approach <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>
         </div>
@@ -176,12 +175,12 @@ function Index() {
             <div className="max-w-xl">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">— Our Services</p>
               <h2 className="font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
-                Crafted for your <span className="italic text-primary">body</span>,<br />
-                designed for <span className="italic text-primary">results</span>.
+                Considered for your <span className="italic text-primary">body</span>,<br />
+                shaped around <span className="italic text-primary">you</span>.
               </h2>
             </div>
             <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
-              Seven signature treatments — from clinical pain relief to advanced body sculpting. Tap any tile to explore.
+              Seven signature treatments — from focused therapeutic massage to gentle, non-invasive body care. Tap any tile to learn more.
             </p>
           </div>
 
@@ -215,7 +214,7 @@ function Index() {
                     Endosphere<br />Therapy
                   </h3>
                   <p className="mt-4 max-w-sm text-base leading-relaxed text-white/90">
-                    Non-invasive cellulite reduction & body sculpting using micro-vibration technology. Real, visible results.
+                    A gentle, non-invasive body treatment using compressive micro-vibration. Comfortable, no downtime — individual results vary.
                   </p>
                 </div>
                 <div className="flex items-end justify-between gap-4">
@@ -232,12 +231,12 @@ function Index() {
 
             {/* Other 6 services as bento cards */}
             {[
-              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Chronic pain relief", img: deepTissue, video: deepTissueVideo.url, span: "md:col-span-3" },
-              { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Recovery & performance", img: sportsMassage, video: sportsMassageVideo.url, span: "md:col-span-2" },
-              { to: "/laser-hair-removal", title: "Laser Hair Removal", desc: "Smooth, lasting results", img: laserImg, video: laserVideo.url, span: "md:col-span-2" },
-              { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Deep, soothing warmth", img: hotStone, video: hotStoneVideo.url, span: "md:col-span-2" },
-              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Detox & reduce swelling", img: lymphatic, video: lymphaticVideo.url, span: "md:col-span-3" },
-              { to: "/waxing", title: "Waxing", desc: "Clean & precise", img: waxingImg, video: waxingVideo.url, span: "md:col-span-3" },
+              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Focused work for stubborn tension", img: deepTissue, video: deepTissueVideo.url, span: "md:col-span-3" },
+              { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Mobility & post-training recovery", img: sportsMassage, video: sportsMassageVideo.url, span: "md:col-span-2" },
+              { to: "/laser-hair-removal", title: "Laser Hair Removal", desc: "Smoother skin, fewer worries", img: laserImg, video: laserVideo.url, span: "md:col-span-2" },
+              { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Warmth that quietly unwinds you", img: hotStone, video: hotStoneVideo.url, span: "md:col-span-2" },
+              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Light, rhythmic & soothing", img: lymphatic, video: lymphaticVideo.url, span: "md:col-span-3" },
+              { to: "/waxing", title: "Waxing", desc: "Precise, hygienic, discreet", img: waxingImg, video: waxingVideo.url, span: "md:col-span-3" },
             ].map((s, i) => (
               <Link
                 key={s.to}
@@ -298,13 +297,13 @@ function Index() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Featured Treatment</p>
             <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">Endosphere Therapy</h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Non-invasive cellulite reduction using micro-vibration & compression technology. Sculpt, smooth and tone with zero downtime.
+              A non-invasive body treatment using compressive micro-vibration. Comfortable sessions, no needles, no downtime — designed to leave you feeling lighter and more cared for.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
-                { sessions: "3", result: "Skin firmer" },
-                { sessions: "6", result: "Visible smoothing" },
-                { sessions: "12", result: "Sculpted contour" },
+                { sessions: "3", result: "Skin may feel firmer" },
+                { sessions: "6", result: "Smoother appearance" },
+                { sessions: "12", result: "More refined contour" },
               ].map((p) => (
                 <div key={p.sessions} className="rounded-2xl border border-primary/20 bg-primary-soft p-5 text-center">
                   <p className="font-display text-3xl font-semibold text-primary-deep">{p.sessions}</p>
@@ -313,6 +312,9 @@ function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Indicative outcomes only. Individual results vary and are not guaranteed. A complimentary consultation is offered before any course begins.
+            </p>
             <Button asChild className="mt-8 rounded-full" size="lg">
               <Link to="/endosphere">View Treatment Plans <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
@@ -322,7 +324,7 @@ function Index() {
 
       {/* LASER PRICING */}
       <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Laser Hair Removal" title="Smooth skin, lasting confidence" subtitle="Fast, comfortable sessions with long-term results." />
+        <SectionHeader eyebrow="Laser Hair Removal" title="Smoother skin, quietly assured" subtitle="Comfortable sessions with a tailored consultation. Suitability and results are confirmed at your patch test." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { area: "Chest", price: "£80" },
@@ -338,20 +340,23 @@ function Index() {
           ))}
         </div>
         <div className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
-          {["Long-term results", "Smooth skin", "Fast sessions", "Safe for all skin types"].map((b) => (
+          {["Tailored to your skin", "Discreet & private", "Patch test included", "Qualified operator"].map((b) => (
             <span key={b} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {b}</span>
           ))}
         </div>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted-foreground">
+          Suitability is confirmed at consultation. Results vary by skin type, hair colour and individual response. Not a medical treatment.
+        </p>
       </section>
 
       {/* RESULTS / BEFORE-AFTER */}
       <section className="px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Real Results" title="Endosphere transformation timeline" subtitle="Visible improvement at every milestone — without injections or downtime." />
+        <SectionHeader eyebrow="Indicative Journey" title="A typical Endosphere course" subtitle="Illustrative milestones only. No needles, no downtime — individual results vary." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
           {[
-            { label: "After 3 Sessions", desc: "Improved skin tone & firmness", pct: "30%", img: gymStage1 },
-            { label: "After 6 Sessions", desc: "Visible cellulite reduction", pct: "60%", img: gymStage2 },
-            { label: "After 12 Sessions", desc: "Sculpted, smooth contours", pct: "95%", img: gymStage3 },
+            { label: "Around session 3", desc: "Skin may feel firmer & better hydrated", pct: "Stage 1", img: gymStage1 },
+            { label: "Around session 6", desc: "Smoother, more even appearance", pct: "Stage 2", img: gymStage2 },
+            { label: "Around session 12", desc: "More refined, toned contour", pct: "Stage 3", img: gymStage3 },
           ].map((r, i) => (
             <div key={r.label} className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
               <div className="relative h-72 overflow-hidden">
@@ -361,8 +366,8 @@ function Index() {
                   Stage {i + 1}
                 </div>
                 <div className="absolute left-4 bottom-4 rounded-2xl bg-white/95 px-4 py-2 text-left shadow-soft backdrop-blur">
-                  <p className="font-display text-2xl font-semibold text-primary-deep leading-none">{r.pct}</p>
-                  <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">improvement</p>
+                  <p className="font-display text-lg font-semibold text-primary-deep leading-none">{r.pct}</p>
+                  <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">indicative</p>
                 </div>
               </div>
               <div className="p-6">
@@ -372,6 +377,9 @@ function Index() {
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-foreground">
+          Images are illustrative and not of named clients. Individual results vary and are not guaranteed.
+        </p>
       </section>
 
       {/* TESTIMONIALS — FLOATING COLLAGE */}
@@ -421,15 +429,15 @@ function Index() {
               Testimonials
             </span>
             <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
-              Trusted by clients<br />
+              Trusted quietly by clients<br />
               <span className="text-muted-foreground">across Nuneaton</span>
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-              Real people, real results. From chronic pain relief to confidence-boosting transformations.
+              Honest words from people I've cared for. Shared with consent — names shortened to protect privacy. Individual experiences vary.
             </p>
             <Button asChild size="lg" className="mt-8 rounded-full bg-foreground px-7 text-background hover:bg-foreground/90">
               <Link to="/contact">
-                Read Success Stories <ArrowRight className="ml-1 h-4 w-4" />
+                Read More Reviews <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -544,6 +552,16 @@ function Index() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* COMPLIANCE & PRIVACY STRIP */}
+      <section className="px-4 pb-4 pt-8 md:px-6">
+        <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-card/60 p-5 text-center shadow-soft md:p-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Your privacy & care</p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
+            All consultations and treatments are private and confidential. Personal and health information you share is handled securely, kept only as long as needed and never sold or shared without your consent (UK GDPR & Data Protection Act 2018). Treatments are not a substitute for medical advice — please consult your GP for any medical condition. Individual results vary and are not guaranteed.
+          </p>
         </div>
       </section>
 

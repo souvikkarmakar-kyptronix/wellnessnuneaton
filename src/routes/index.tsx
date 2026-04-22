@@ -101,23 +101,23 @@ function Index() {
               <Sparkles className="h-3.5 w-3.5" /> Nuneaton · Wellness Clinic
             </span>
             <h1 className="font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl">
-              Pain Relief.<br />Recovery.<br /><span className="italic text-white/95">Confidence.</span>
+              Considered care.<br />Quiet results.<br /><span className="italic text-white/95">Crafted for you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
-              Advanced therapeutic massage, laser treatments & body sculpting — delivered with medical precision in Nuneaton.
+              Therapeutic massage, laser hair removal & non-invasive body treatments in Nuneaton — delivered with skill, discretion and complete respect for your privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full bg-white text-primary hover:bg-white/95">
-                <Link to="/contact">Book Appointment <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                <Link to="/contact">Book a Session <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full border-white/40 bg-transparent text-white hover:bg-white/10">
-                <Link to="/contact">Get Free Consultation</Link>
+                <Link to="/contact">Request a Complimentary Consultation</Link>
               </Button>
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/85">
-              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Certified Therapist</span>
-              <span className="flex items-center gap-2"><GraduationCap className="h-4 w-4" /> Medical University Trained</span>
-              <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-current" /> 5.0 Reviews</span>
+              <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Qualified Therapist</span>
+              <span className="flex items-center gap-2"><GraduationCap className="h-4 w-4" /> Trained at a Medical University</span>
+              <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-current" /> Highly Rated by Local Clients</span>
             </div>
           </div>
           <div className="lg:pl-6">

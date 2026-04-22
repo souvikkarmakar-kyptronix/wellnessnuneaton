@@ -35,10 +35,10 @@ import gymStage3 from "@/assets/gym-stage-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Massage Nuneaton — Pain Relief, Recovery & Body Care | Relaxify" },
-      { name: "description", content: "Premium therapeutic massage, Endosphere body sculpting & laser hair removal in Nuneaton. Book with Elina, Level 4 qualified therapist. Free consultation." },
-      { property: "og:title", content: "Massage Nuneaton — Relaxify Wellness" },
-      { property: "og:description", content: "Pain Relief. Recovery. Confidence." },
+      { title: "Massage & Body Care in Nuneaton — Relaxify Wellness" },
+      { name: "description", content: "Therapeutic massage, Endosphere body treatments & laser hair removal in Nuneaton. Qualified, discreet care with a complimentary consultation. Individual results vary." },
+      { property: "og:title", content: "Relaxify Wellness — Nuneaton" },
+      { property: "og:description", content: "Considered care. Quiet confidence. Individual results vary." },
     ],
   }),
   component: Index,
@@ -55,9 +55,9 @@ const services = [
 ] as const;
 
 const testimonials = [
-  { name: "Sarah M.", quote: "After 3 sessions my back pain is gone. Elina is incredibly knowledgeable.", tag: "Pain relief" },
-  { name: "Joanne K.", quote: "Endosphere changed my legs after 6 sessions — visible, real results.", tag: "Confidence" },
-  { name: "Mark R.", quote: "Best sports massage in Nuneaton. I recover twice as fast now.", tag: "Recovery" },
+  { name: "Sarah M.", quote: "I left feeling lighter and noticeably less tense. Elina listened carefully and tailored every step.", tag: "Tension relief" },
+  { name: "Joanne K.", quote: "After my Endosphere course my skin felt firmer and smoother — a really considered, professional experience.", tag: "Body confidence" },
+  { name: "Mark R.", quote: "A calm, attentive sports massage. I felt looser and more mobile after the session.", tag: "Recovery" },
 ];
 
 const socialPosts = [

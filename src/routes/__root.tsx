@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingActions } from "@/components/floating-actions";
+import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
@@ -80,6 +81,7 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <FloatingActions />
+      <Toaster richColors position="top-center" />
     </div>
   );
 }

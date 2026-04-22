@@ -122,24 +122,98 @@ function Index() {
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Our Services" title="Treatments designed around you" subtitle="From clinical pain relief to advanced body sculpting — every session is tailored to your goals." />
-        <div className="mx-auto mt-14 grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <Link key={s.to} to={s.to} className="group overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={s.img} alt={s.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+      {/* SERVICES — BENTO */}
+      <section className="relative overflow-hidden px-4 py-20 md:px-6 md:py-28">
+        <div aria-hidden className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-xl">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">— Our Services</p>
+              <h2 className="font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+                Crafted for your <span className="italic text-primary">body</span>,<br />
+                designed for <span className="italic text-primary">results</span>.
+              </h2>
+            </div>
+            <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
+              Seven signature treatments — from clinical pain relief to advanced body sculpting. Tap any tile to explore.
+            </p>
+          </div>
+
+          <div className="mt-14 grid auto-rows-[minmax(0,1fr)] gap-4 md:grid-cols-6 md:gap-5">
+            {/* Featured large card — Endosphere */}
+            <Link
+              to="/endosphere"
+              className="group relative col-span-1 row-span-2 overflow-hidden rounded-[2rem] bg-primary p-8 text-primary-foreground shadow-elegant transition-smooth hover:-translate-y-1 md:col-span-3 md:row-span-2 md:min-h-[28rem]"
+            >
+              <div className="absolute inset-0 -z-10 opacity-30 mix-blend-overlay">
+                <img src={endosphereImg} alt="" className="h-full w-full object-cover" />
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-semibold text-foreground">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </span>
+              <div aria-hidden className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/15 blur-2xl" />
+              <div aria-hidden className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
+
+              <div className="flex h-full flex-col justify-between gap-8">
+                <div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] backdrop-blur">
+                    <Sparkles className="h-3 w-3" /> Featured
+                  </span>
+                  <h3 className="mt-6 font-display text-4xl font-semibold leading-tight md:text-5xl">
+                    Endosphere<br />Therapy
+                  </h3>
+                  <p className="mt-4 max-w-sm text-base leading-relaxed text-white/90">
+                    Non-invasive cellulite reduction & body sculpting using micro-vibration technology. Real, visible results.
+                  </p>
+                </div>
+                <div className="flex items-end justify-between gap-4">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-xs uppercase tracking-wider text-white/70">From</span>
+                    <span className="font-display text-3xl font-semibold">£40</span>
+                  </div>
+                  <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-primary transition-transform duration-500 group-hover:rotate-45">
+                    <ArrowRight className="h-5 w-5" />
+                  </span>
+                </div>
               </div>
             </Link>
-          ))}
+
+            {/* Other 6 services as bento cards */}
+            {[
+              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Chronic pain relief", img: deepTissue, span: "md:col-span-3" },
+              { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Recovery & performance", img: sportsMassage, span: "md:col-span-2" },
+              { to: "/laser-hair-removal", title: "Laser Hair Removal", desc: "Smooth, lasting results", img: laserImg, span: "md:col-span-2" },
+              { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Deep, soothing warmth", img: hotStone, span: "md:col-span-2" },
+              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Detox & reduce swelling", img: lymphatic, span: "md:col-span-3" },
+              { to: "/waxing", title: "Waxing", desc: "Clean & precise", img: waxingImg, span: "md:col-span-3" },
+            ].map((s, i) => (
+              <Link
+                key={s.to}
+                to={s.to}
+                className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant ${s.span} min-h-[14rem]`}
+              >
+                <div className="absolute inset-0">
+                  <img src={s.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                </div>
+                <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-primary backdrop-blur transition-all duration-500 group-hover:rotate-45 group-hover:bg-white">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+                <span className="absolute left-5 top-5 font-display text-xs font-semibold tracking-widest text-white/70">
+                  0{i + 2}
+                </span>
+                <div className="relative flex h-full flex-col justify-end p-6 text-white">
+                  <h3 className="font-display text-2xl font-semibold leading-tight md:text-[1.65rem]">{s.title}</h3>
+                  <p className="mt-1 text-sm text-white/85">{s.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <Button asChild variant="outline" size="lg" className="rounded-full">
+              <Link to="/treatments">View all treatments <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
+          </div>
         </div>
       </section>
 

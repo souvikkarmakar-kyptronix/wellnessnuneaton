@@ -555,6 +555,16 @@ function Index() {
         </div>
       </section>
 
+      {/* COMPLIANCE & PRIVACY STRIP */}
+      <section className="px-4 pb-4 pt-8 md:px-6">
+        <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-card/60 p-5 text-center shadow-soft md:p-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Your privacy & care</p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
+            All consultations and treatments are private and confidential. Personal and health information you share is handled securely, kept only as long as needed and never sold or shared without your consent (UK GDPR & Data Protection Act 2018). Treatments are not a substitute for medical advice — please consult your GP for any medical condition. Individual results vary and are not guaranteed.
+          </p>
+        </div>
+      </section>
+
       <CtaSection />
     </>
   );

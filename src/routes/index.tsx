@@ -95,28 +95,28 @@ function Index() {
           <img src={heroImg} alt="Calm spa room" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-hero" />
         </div>
-        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-20 md:grid-cols-[1.1fr_1fr] md:gap-12 md:px-6 md:py-28 lg:py-36">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 px-5 pb-12 pt-20 sm:gap-10 sm:px-6 sm:py-20 md:grid-cols-[1.1fr_1fr] md:gap-12 md:py-28 lg:py-36">
           <div className="flex flex-col justify-center text-white animate-fade-up">
-            <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] backdrop-blur">
+            <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] ios-blur sm:px-4 sm:text-xs">
               <Sparkles className="h-3.5 w-3.5" /> Nuneaton · Wellness Clinic
             </span>
-            <h1 className="font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl">
+            <h1 className="font-display text-[2.5rem] font-semibold leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl">
               Considered care.<br />Quiet results.<br /><span className="italic text-white/95">Crafted for you.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/90 sm:text-base md:text-lg">
               Therapeutic massage, laser hair removal & non-invasive body treatments in Nuneaton — delivered with skill, discretion and complete respect for your privacy.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="rounded-full bg-white text-primary hover:bg-white/95">
+            <div className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+              <Button asChild size="lg" className="h-12 rounded-full bg-white text-primary hover:bg-white/95 tap-highlight-none">
                 <Link to="/contact">Book a Session <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-white/40 bg-transparent text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="h-12 rounded-full border-white/40 bg-transparent text-white hover:bg-white/10 tap-highlight-none">
                 <Link to="/contact">Request a Complimentary Consultation</Link>
               </Button>
             </div>
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/85">
+            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-white/85 sm:gap-x-8 sm:gap-y-4 sm:text-sm">
               <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Qualified Therapist</span>
-              <span className="flex items-center gap-2"><GraduationCap className="h-4 w-4" /> Trained at a Medical University</span>
+              <span className="flex items-center gap-2"><GraduationCap className="h-4 w-4" /> Medical University Trained</span>
               <span className="flex items-center gap-2"><Star className="h-4 w-4 fill-current" /> Highly Rated by Local Clients</span>
             </div>
           </div>

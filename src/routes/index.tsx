@@ -577,36 +577,36 @@ function Index() {
       </section>
 
       {/* SOCIAL FEED */}
-      <section className="px-4 py-20 md:px-6 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+      <section className="py-16 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:gap-8">
             <div className="max-w-xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft sm:px-4 sm:text-xs">
                 <Sparkles className="h-3.5 w-3.5 text-primary" /> Daily updates
               </span>
-              <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+              <h2 className="mt-4 font-display text-[2rem] font-semibold leading-[1.05] text-foreground sm:mt-5 sm:text-4xl md:text-5xl lg:text-6xl">
                 Follow our journey<br />
                 <span className="text-muted-foreground">on social media</span>
               </h2>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground sm:mt-5 sm:text-base md:text-lg">
                 Tips, transformations and behind-the-scenes — fresh posts every day across Instagram, Facebook and TikTok.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex w-full flex-wrap gap-2.5 sm:w-auto sm:gap-3">
               {socialChannels.map((c) => (
                 <a
                   key={c.platform}
                   href={c.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:shadow-elegant"
+                  className="group flex flex-1 items-center gap-2.5 rounded-2xl border border-border bg-card px-3 py-2.5 shadow-soft transition tap-highlight-none hover:-translate-y-0.5 hover:shadow-elegant sm:flex-none sm:gap-3 sm:px-4 sm:py-3"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background transition group-hover:bg-primary">
-                    <PlatformIcon platform={c.platform} className="h-5 w-5" />
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground text-background transition group-hover:bg-primary sm:h-10 sm:w-10">
+                    <PlatformIcon platform={c.platform} className="h-4 w-4 sm:h-5 sm:w-5" />
                   </span>
                   <span className="text-left">
-                    <span className="block text-sm font-semibold text-foreground">{c.handle}</span>
-                    <span className="block text-xs text-muted-foreground">{c.followers} followers</span>
+                    <span className="block text-xs font-semibold text-foreground sm:text-sm">{c.handle}</span>
+                    <span className="block text-[10px] text-muted-foreground sm:text-xs">{c.followers} followers</span>
                   </span>
                 </a>
               ))}
@@ -614,14 +614,14 @@ function Index() {
           </div>
 
           {/* Posts grid */}
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-5 lg:grid-cols-3">
             {socialPosts.map((p, i) => (
               <a
                 key={i}
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:-translate-y-1 hover:shadow-elegant"
+                className="group relative block overflow-hidden rounded-2xl border border-border bg-card shadow-card transition tap-highlight-none hover:-translate-y-1 hover:shadow-elegant sm:rounded-3xl"
               >
                 <div className="relative aspect-square overflow-hidden">
                   <img
@@ -633,34 +633,34 @@ function Index() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                   {/* Platform badge */}
-                  <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-soft backdrop-blur">
-                    <PlatformIcon platform={p.platform} className="h-3.5 w-3.5" />
+                  <div className="absolute left-2.5 top-2.5 flex items-center gap-1.5 rounded-full bg-white/95 px-2 py-1 text-[10px] font-semibold text-foreground shadow-soft ios-blur sm:left-4 sm:top-4 sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs">
+                    <PlatformIcon platform={p.platform} className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                     <span className="capitalize">{p.platform}</span>
                   </div>
 
                   {/* Time badge */}
-                  <div className="absolute right-4 top-4 rounded-full bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white backdrop-blur">
+                  <div className="absolute right-2.5 top-2.5 rounded-full bg-black/40 px-2 py-0.5 text-[9px] font-medium uppercase tracking-wider text-white ios-blur sm:right-4 sm:top-4 sm:px-2.5 sm:py-1 sm:text-[10px]">
                     {p.time}
                   </div>
 
                   {/* Play icon for tiktok */}
                   {p.platform === "tiktok" && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-elegant">
-                        <Play className="h-6 w-6 fill-foreground text-foreground" />
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 shadow-elegant sm:h-14 sm:w-14">
+                        <Play className="h-5 w-5 fill-foreground text-foreground sm:h-6 sm:w-6" />
                       </span>
                     </div>
                   )}
 
                   {/* Caption + stats */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="line-clamp-2 text-sm font-medium leading-snug">{p.caption}</p>
-                    <div className="mt-3 flex items-center gap-4 text-xs">
-                      <span className="flex items-center gap-1.5">
-                        <Heart className="h-3.5 w-3.5 fill-white" /> {p.likes}
+                  <div className="absolute inset-x-0 bottom-0 p-3 text-white sm:p-5">
+                    <p className="line-clamp-2 text-xs font-medium leading-snug sm:text-sm">{p.caption}</p>
+                    <div className="mt-2 flex items-center gap-3 text-[10px] sm:mt-3 sm:gap-4 sm:text-xs">
+                      <span className="flex items-center gap-1 sm:gap-1.5">
+                        <Heart className="h-3 w-3 fill-white sm:h-3.5 sm:w-3.5" /> {p.likes}
                       </span>
-                      <span className="flex items-center gap-1.5">
-                        <MessageCircle className="h-3.5 w-3.5" /> {p.comments}
+                      <span className="flex items-center gap-1 sm:gap-1.5">
+                        <MessageCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> {p.comments}
                       </span>
                     </div>
                   </div>
@@ -672,10 +672,10 @@ function Index() {
       </section>
 
       {/* COMPLIANCE & PRIVACY STRIP */}
-      <section className="px-4 pb-4 pt-8 md:px-6">
-        <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-card/60 p-5 text-center shadow-soft md:p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Your privacy & care</p>
-          <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
+      <section className="px-5 pb-2 pt-6 sm:px-6 sm:pb-4 sm:pt-8">
+        <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-card/60 p-4 text-center shadow-soft sm:p-5 md:p-6">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary sm:text-[11px]">Your privacy & care</p>
+          <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground sm:text-xs md:text-sm">
             All consultations and treatments are private and confidential. Personal and health information you share is handled securely, kept only as long as needed and never sold or shared without your consent (UK GDPR & Data Protection Act 2018). Treatments are not a substitute for medical advice — please consult your GP for any medical condition. Individual results vary and are not guaranteed.
           </p>
         </div>

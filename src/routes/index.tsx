@@ -415,6 +415,101 @@ function Index() {
         </div>
       </section>
 
+      {/* SOCIAL FEED */}
+      <section className="px-4 py-20 md:px-6 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground shadow-soft">
+                <Sparkles className="h-3.5 w-3.5 text-primary" /> Daily updates
+              </span>
+              <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+                Follow our journey<br />
+                <span className="text-muted-foreground">on social media</span>
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+                Tips, transformations and behind-the-scenes — fresh posts every day across Instagram, Facebook and TikTok.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {socialChannels.map((c) => (
+                <a
+                  key={c.platform}
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:shadow-elegant"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background transition group-hover:bg-primary">
+                    <PlatformIcon platform={c.platform} className="h-5 w-5" />
+                  </span>
+                  <span className="text-left">
+                    <span className="block text-sm font-semibold text-foreground">{c.handle}</span>
+                    <span className="block text-xs text-muted-foreground">{c.followers} followers</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Posts grid */}
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {socialPosts.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block overflow-hidden rounded-3xl border border-border bg-card shadow-card transition hover:-translate-y-1 hover:shadow-elegant"
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.caption}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                  {/* Platform badge */}
+                  <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-soft backdrop-blur">
+                    <PlatformIcon platform={p.platform} className="h-3.5 w-3.5" />
+                    <span className="capitalize">{p.platform}</span>
+                  </div>
+
+                  {/* Time badge */}
+                  <div className="absolute right-4 top-4 rounded-full bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white backdrop-blur">
+                    {p.time}
+                  </div>
+
+                  {/* Play icon for tiktok */}
+                  {p.platform === "tiktok" && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-elegant">
+                        <Play className="h-6 w-6 fill-foreground text-foreground" />
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Caption + stats */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="line-clamp-2 text-sm font-medium leading-snug">{p.caption}</p>
+                    <div className="mt-3 flex items-center gap-4 text-xs">
+                      <span className="flex items-center gap-1.5">
+                        <Heart className="h-3.5 w-3.5 fill-white" /> {p.likes}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MessageCircle className="h-3.5 w-3.5" /> {p.comments}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CtaSection />
     </>
   );

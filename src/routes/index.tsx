@@ -270,12 +270,12 @@ function Index() {
 
             {/* Other 6 services as bento cards */}
             {[
-              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Focused work for stubborn tension", img: deepTissue, video: deepTissueVideo.url, span: "md:col-span-3" },
+              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Focused work for stubborn tension", img: deepTissue, video: deepTissueVideo.url, span: "col-span-6 md:col-span-3" },
               { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Mobility & post-training recovery", img: sportsMassage, video: sportsMassageVideo.url, span: "md:col-span-2" },
               { to: "/laser-hair-removal", title: "Laser Hair Removal", desc: "Smoother skin, fewer worries", img: laserImg, video: laserVideo.url, span: "md:col-span-2" },
               { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Warmth that quietly unwinds you", img: hotStone, video: hotStoneVideo.url, span: "md:col-span-2" },
-              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Light, rhythmic & soothing", img: lymphatic, video: lymphaticVideo.url, span: "md:col-span-3" },
-              { to: "/waxing", title: "Waxing", desc: "Precise, hygienic, discreet", img: waxingImg, video: waxingVideo.url, span: "md:col-span-3" },
+              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Light, rhythmic & soothing", img: lymphatic, video: lymphaticVideo.url, span: "col-span-6 md:col-span-3" },
+              { to: "/waxing", title: "Waxing", desc: "Precise, hygienic, discreet", img: waxingImg, video: waxingVideo.url, span: "col-span-6 md:col-span-3" },
             ].map((s, i) => (
               <Link
                 key={s.to}

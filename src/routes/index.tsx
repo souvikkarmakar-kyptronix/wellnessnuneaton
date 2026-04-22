@@ -390,25 +390,58 @@ function Index() {
 
       {/* RESULTS / BEFORE-AFTER */}
       {/* INDICATIVE JOURNEY — editorial timeline */}
-      <section className="relative overflow-hidden px-4 py-20 md:px-6 md:py-28">
+      <section className="relative overflow-hidden py-16 sm:py-20 md:py-28">
         <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:gap-8">
             <div className="max-w-xl">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary">— Indicative Journey</p>
-              <h2 className="font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
+              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary sm:mb-4 sm:text-xs">— Indicative Journey</p>
+              <h2 className="font-display text-[2rem] font-semibold leading-[1.05] text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
                 A typical<br />
                 <span className="italic text-primary">Endosphere</span> course.
               </h2>
             </div>
-            <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
+            <p className="max-w-sm text-[15px] leading-relaxed text-muted-foreground sm:text-base">
               Illustrative milestones only. No needles, no downtime — individual results vary and are confirmed at your complimentary consultation.
             </p>
           </div>
 
-          <div className="relative mt-20 grid gap-10 md:grid-cols-3 md:gap-6">
+          {/* Mobile: snap-scroll */}
+          <div className="-mx-5 mt-12 sm:hidden">
+            <div className="scroll-snap-x flex gap-4 overflow-x-auto px-5 pb-2">
+              {[
+                { session: "03", label: "Settling in", desc: "Skin may feel firmer and better hydrated.", img: gymStage1 },
+                { session: "06", label: "Mid-course", desc: "A smoother, more even appearance.", img: gymStage2 },
+                { session: "12", label: "Refined", desc: "A more toned, refined contour.", img: gymStage3 },
+              ].map((s, i) => (
+                <div key={s.session} className="snap-card w-[78%] flex-none">
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="grid h-6 w-6 place-items-center rounded-full bg-background ring-1 ring-primary/30">
+                      <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                    </span>
+                    <span className="font-display text-[10px] font-semibold uppercase tracking-[0.24em] text-primary">
+                      Around session {s.session}
+                    </span>
+                  </div>
+                  <div className="overflow-hidden rounded-[1.5rem] shadow-elegant aspect-[4/5]">
+                    <img src={s.img} alt={`Stage ${i + 1}`} loading="lazy" className="h-full w-full object-cover" />
+                  </div>
+                  <div className="mt-4 flex items-baseline justify-between gap-3">
+                    <h3 className="font-display text-xl font-semibold leading-tight">Stage {i + 1} — {s.label}</h3>
+                    <span className="shrink-0 rounded-full border border-border bg-card px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      Indicative
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tablet+ : original timeline */}
+          <div className="relative mt-20 hidden gap-10 sm:grid sm:grid-cols-3 sm:gap-6">
             {/* Connecting line — desktop only */}
             <div
               aria-hidden
@@ -457,7 +490,7 @@ function Index() {
             ))}
           </div>
 
-          <p className="mx-auto mt-16 max-w-2xl text-center text-xs leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-[11px] leading-relaxed text-muted-foreground sm:mt-16 sm:text-xs">
             Images are illustrative and do not depict named clients. Outcomes vary by individual; nothing here constitutes a medical claim or guarantee.
           </p>
         </div>

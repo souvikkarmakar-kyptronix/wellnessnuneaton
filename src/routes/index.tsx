@@ -11,6 +11,7 @@ import sportsMassage from "@/assets/sports-massage.jpg";
 import hotStone from "@/assets/hot-stone.jpg";
 import lymphatic from "@/assets/lymphatic.jpg";
 import endosphereImg from "@/assets/endosphere.jpg";
+import endosphereVideo from "@/assets/endosphere.mp4.asset.json";
 import laserImg from "@/assets/laser.jpg";
 import waxingImg from "@/assets/waxing.jpg";
 import client1 from "@/assets/client-1.jpg";

@@ -11,6 +11,7 @@ import sportsMassage from "@/assets/sports-massage.jpg";
 import hotStone from "@/assets/hot-stone.jpg";
 import lymphatic from "@/assets/lymphatic.jpg";
 import endosphereImg from "@/assets/endosphere.jpg";
+import endosphereVideo from "@/assets/endosphere.mp4.asset.json";
 import laserImg from "@/assets/laser.jpg";
 import waxingImg from "@/assets/waxing.jpg";
 import client1 from "@/assets/client-1.jpg";
@@ -257,8 +258,17 @@ function Index() {
       {/* ENDOSPHERE HIGHLIGHT */}
       <section className="px-4 py-20 md:px-6 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
-          <div className="overflow-hidden rounded-3xl shadow-elegant">
-            <img src={endosphereImg} alt="Endosphere therapy device" loading="lazy" className="h-full w-full object-cover" />
+          <div className="overflow-hidden rounded-3xl shadow-elegant aspect-[4/5] md:aspect-auto">
+            <video
+              src={endosphereVideo.url}
+              poster={endosphereImg}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Featured Treatment</p>

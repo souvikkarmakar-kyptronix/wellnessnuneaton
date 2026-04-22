@@ -315,20 +315,20 @@ function Index() {
         <SectionHeader eyebrow="Real Results" title="Endosphere transformation timeline" subtitle="Visible improvement at every milestone — without injections or downtime." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
           {[
-            { label: "After 3 Sessions", desc: "Improved skin tone & firmness", pct: "30%" },
-            { label: "After 6 Sessions", desc: "Visible cellulite reduction", pct: "60%" },
-            { label: "After 12 Sessions", desc: "Sculpted, smooth contours", pct: "95%" },
+            { label: "After 3 Sessions", desc: "Improved skin tone & firmness", pct: "30%", img: resultStage1 },
+            { label: "After 6 Sessions", desc: "Visible cellulite reduction", pct: "60%", img: resultStage2 },
+            { label: "After 12 Sessions", desc: "Sculpted, smooth contours", pct: "95%", img: resultStage3 },
           ].map((r, i) => (
             <div key={r.label} className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-primary-soft to-primary/20">
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center">
-                    <p className="font-display text-6xl font-semibold text-primary-deep">{r.pct}</p>
-                    <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">improvement</p>
-                  </div>
-                </div>
-                <div className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-primary">
+              <div className="relative h-72 overflow-hidden">
+                <img src={r.img} alt={r.label} loading="lazy" width={768} height={768} className="h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-primary shadow-soft">
                   Stage {i + 1}
+                </div>
+                <div className="absolute left-4 bottom-4 rounded-2xl bg-white/95 px-4 py-2 text-left shadow-soft backdrop-blur">
+                  <p className="font-display text-2xl font-semibold text-primary-deep leading-none">{r.pct}</p>
+                  <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">improvement</p>
                 </div>
               </div>
               <div className="p-6">

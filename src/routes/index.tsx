@@ -192,7 +192,16 @@ function Index() {
               className="group relative col-span-1 row-span-2 overflow-hidden rounded-[2rem] bg-primary p-8 text-primary-foreground shadow-elegant transition-smooth hover:-translate-y-1 md:col-span-3 md:row-span-2 md:min-h-[28rem]"
             >
               <div className="absolute inset-0 -z-10 opacity-30 mix-blend-overlay">
-                <img src={endosphereImg} alt="" className="h-full w-full object-cover" />
+                <video
+                  src={endosphereVideo.url}
+                  poster={endosphereImg}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div aria-hidden className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/15 blur-2xl" />
               <div aria-hidden className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
@@ -223,12 +232,12 @@ function Index() {
 
             {/* Other 6 services as bento cards */}
             {[
-              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Chronic pain relief", img: deepTissue, span: "md:col-span-3" },
-              { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Recovery & performance", img: sportsMassage, span: "md:col-span-2" },
-              { to: "/laser-hair-removal", title: "Laser Hair Removal", desc: "Smooth, lasting results", img: laserImg, span: "md:col-span-2" },
-              { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Deep, soothing warmth", img: hotStone, span: "md:col-span-2" },
-              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Detox & reduce swelling", img: lymphatic, span: "md:col-span-3" },
-              { to: "/waxing", title: "Waxing", desc: "Clean & precise", img: waxingImg, span: "md:col-span-3" },
+              { to: "/treatments/deep-tissue-massage", title: "Deep Tissue", desc: "Chronic pain relief", img: deepTissue, video: deepTissueVideo.url, span: "md:col-span-3" },
+              { to: "/treatments/sports-massage", title: "Sports Massage", desc: "Recovery & performance", img: sportsMassage, video: sportsMassageVideo.url, span: "md:col-span-2" },
+              { to: "/laser-hair-removal", title: "Laser Hair Removal", desc: "Smooth, lasting results", img: laserImg, video: laserVideo.url, span: "md:col-span-2" },
+              { to: "/treatments/hot-stone-massage", title: "Hot Stone", desc: "Deep, soothing warmth", img: hotStone, video: hotStoneVideo.url, span: "md:col-span-2" },
+              { to: "/treatments/lymphatic-drainage", title: "Lymphatic Drainage", desc: "Detox & reduce swelling", img: lymphatic, video: lymphaticVideo.url, span: "md:col-span-3" },
+              { to: "/waxing", title: "Waxing", desc: "Clean & precise", img: waxingImg, video: waxingVideo.url, span: "md:col-span-3" },
             ].map((s, i) => (
               <Link
                 key={s.to}
@@ -236,7 +245,16 @@ function Index() {
                 className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant ${s.span} min-h-[14rem]`}
               >
                 <div className="absolute inset-0">
-                  <img src={s.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <video
+                    src={s.video}
+                    poster={s.img}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                 </div>
                 <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-primary backdrop-blur transition-all duration-500 group-hover:rotate-45 group-hover:bg-white">

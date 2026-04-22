@@ -36,11 +36,15 @@ export const Route = createRootRoute({
       { title: "Massage Nuneaton — Relaxify Wellness | Pain Relief & Body Care" },
       { name: "description", content: "Advanced therapeutic massage, laser hair removal & Endosphere body sculpting in Nuneaton. Book with Elina, Level 4 qualified therapist." },
       { name: "author", content: "Relaxify Wellness" },
-      { property: "og:title", content: "Massage Nuneaton — Relaxify Wellness" },
-      { property: "og:description", content: "Pain Relief. Recovery. Confidence. Premium therapeutic massage & body care." },
+      { property: "og:title", content: "Massage Nuneaton — Relaxify Wellness | Pain Relief & Body Care" },
+      { property: "og:description", content: "Advanced therapeutic massage, laser hair removal & Endosphere body sculpting in Nuneaton. Book with Elina, Level 4 qualified therapist." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Massage Nuneaton — Relaxify Wellness | Pain Relief & Body Care" },
+      { name: "twitter:description", content: "Advanced therapeutic massage, laser hair removal & Endosphere body sculpting in Nuneaton. Book with Elina, Level 4 qualified therapist." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/afc6ee1c-1fc0-477a-983c-5662c316c24e/id-preview-64832875--341a088d-a5ed-4410-adb2-c7b32fd79c8e.lovable.app-1776869844047.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/afc6ee1c-1fc0-477a-983c-5662c316c24e/id-preview-64832875--341a088d-a5ed-4410-adb2-c7b32fd79c8e.lovable.app-1776869844047.png" },
     ],
     links: [
       {

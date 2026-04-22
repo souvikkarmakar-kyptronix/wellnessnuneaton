@@ -297,13 +297,13 @@ function Index() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Featured Treatment</p>
             <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">Endosphere Therapy</h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Non-invasive cellulite reduction using micro-vibration & compression technology. Sculpt, smooth and tone with zero downtime.
+              A non-invasive body treatment using compressive micro-vibration. Comfortable sessions, no needles, no downtime — designed to leave you feeling lighter and more cared for.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
-                { sessions: "3", result: "Skin firmer" },
-                { sessions: "6", result: "Visible smoothing" },
-                { sessions: "12", result: "Sculpted contour" },
+                { sessions: "3", result: "Skin may feel firmer" },
+                { sessions: "6", result: "Smoother appearance" },
+                { sessions: "12", result: "More refined contour" },
               ].map((p) => (
                 <div key={p.sessions} className="rounded-2xl border border-primary/20 bg-primary-soft p-5 text-center">
                   <p className="font-display text-3xl font-semibold text-primary-deep">{p.sessions}</p>
@@ -312,6 +312,9 @@ function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Indicative outcomes only. Individual results vary and are not guaranteed. A complimentary consultation is offered before any course begins.
+            </p>
             <Button asChild className="mt-8 rounded-full" size="lg">
               <Link to="/endosphere">View Treatment Plans <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>

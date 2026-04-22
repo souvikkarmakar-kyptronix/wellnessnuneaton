@@ -127,10 +127,10 @@ function Index() {
       </section>
 
       {/* ABOUT PREVIEW */}
-      <section className="px-4 py-20 md:px-6 md:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
+      <section className="px-5 py-16 sm:px-6 sm:py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center md:gap-12">
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl shadow-elegant">
+            <div className="overflow-hidden rounded-[1.75rem] shadow-elegant md:rounded-3xl">
               <img src={elinaImg} alt="Elina, qualified therapist" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-card p-5 shadow-elegant md:block">
@@ -139,26 +139,26 @@ function Index() {
             </div>
           </div>
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Meet Your Therapist</p>
-            <h2 className="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-xs">Meet Your Therapist</p>
+            <h2 className="font-display text-[1.85rem] font-semibold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
               Hello, I'm Elina — your therapist in Nuneaton.
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground sm:text-base md:text-lg">
               I'm a Level 4 qualified massage therapist trained at a medical university in Latvia. My approach is calm, attentive and personalised — every session is shaped around how you feel that day, what you'd like to work on, and what your body needs most.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="mt-7 grid grid-cols-3 gap-2.5 sm:gap-3">
               {[
                 { icon: Award, label: "Level 4 Qualified" },
                 { icon: GraduationCap, label: "Medical University Training" },
                 { icon: ShieldCheck, label: "Insured & Confidential" },
               ].map((b) => (
-                <div key={b.label} className="rounded-2xl border border-border bg-card p-4 shadow-card">
-                  <b.icon className="mb-2 h-5 w-5 text-primary" />
-                  <p className="text-sm font-medium">{b.label}</p>
+                <div key={b.label} className="rounded-2xl border border-border bg-card p-3 shadow-card sm:p-4">
+                  <b.icon className="mb-2 h-4 w-4 text-primary sm:h-5 sm:w-5" />
+                  <p className="text-[11px] font-medium leading-tight sm:text-sm">{b.label}</p>
                 </div>
               ))}
             </div>
-            <Button asChild variant="ghost" className="mt-8 rounded-full px-0 text-primary hover:bg-transparent hover:text-primary-deep">
+            <Button asChild variant="ghost" className="mt-7 rounded-full px-0 text-primary hover:bg-transparent hover:text-primary-deep">
               <Link to="/about">Read more about my approach <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
           </div>

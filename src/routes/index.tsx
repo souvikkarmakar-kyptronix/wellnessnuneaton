@@ -175,12 +175,12 @@ function Index() {
             <div className="max-w-xl">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">— Our Services</p>
               <h2 className="font-display text-4xl font-semibold leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
-                Crafted for your <span className="italic text-primary">body</span>,<br />
-                designed for <span className="italic text-primary">results</span>.
+                Considered for your <span className="italic text-primary">body</span>,<br />
+                shaped around <span className="italic text-primary">you</span>.
               </h2>
             </div>
             <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
-              Seven signature treatments — from clinical pain relief to advanced body sculpting. Tap any tile to explore.
+              Seven signature treatments — from focused therapeutic massage to gentle, non-invasive body care. Tap any tile to learn more.
             </p>
           </div>
 
@@ -214,7 +214,7 @@ function Index() {
                     Endosphere<br />Therapy
                   </h3>
                   <p className="mt-4 max-w-sm text-base leading-relaxed text-white/90">
-                    Non-invasive cellulite reduction & body sculpting using micro-vibration technology. Real, visible results.
+                    A gentle, non-invasive body treatment using compressive micro-vibration. Comfortable, no downtime — individual results vary.
                   </p>
                 </div>
                 <div className="flex items-end justify-between gap-4">

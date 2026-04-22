@@ -324,7 +324,7 @@ function Index() {
 
       {/* LASER PRICING */}
       <section className="bg-gradient-soft px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Laser Hair Removal" title="Smooth skin, lasting confidence" subtitle="Fast, comfortable sessions with long-term results." />
+        <SectionHeader eyebrow="Laser Hair Removal" title="Smoother skin, quietly assured" subtitle="Comfortable sessions with a tailored consultation. Suitability and results are confirmed at your patch test." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { area: "Chest", price: "£80" },
@@ -340,20 +340,23 @@ function Index() {
           ))}
         </div>
         <div className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
-          {["Long-term results", "Smooth skin", "Fast sessions", "Safe for all skin types"].map((b) => (
+          {["Tailored to your skin", "Discreet & private", "Patch test included", "Qualified operator"].map((b) => (
             <span key={b} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {b}</span>
           ))}
         </div>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted-foreground">
+          Suitability is confirmed at consultation. Results vary by skin type, hair colour and individual response. Not a medical treatment.
+        </p>
       </section>
 
       {/* RESULTS / BEFORE-AFTER */}
       <section className="px-4 py-20 md:px-6 md:py-28">
-        <SectionHeader eyebrow="Real Results" title="Endosphere transformation timeline" subtitle="Visible improvement at every milestone — without injections or downtime." />
+        <SectionHeader eyebrow="Indicative Journey" title="A typical Endosphere course" subtitle="Illustrative milestones only. No needles, no downtime — individual results vary." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
           {[
-            { label: "After 3 Sessions", desc: "Improved skin tone & firmness", pct: "30%", img: gymStage1 },
-            { label: "After 6 Sessions", desc: "Visible cellulite reduction", pct: "60%", img: gymStage2 },
-            { label: "After 12 Sessions", desc: "Sculpted, smooth contours", pct: "95%", img: gymStage3 },
+            { label: "Around session 3", desc: "Skin may feel firmer & better hydrated", pct: "Stage 1", img: gymStage1 },
+            { label: "Around session 6", desc: "Smoother, more even appearance", pct: "Stage 2", img: gymStage2 },
+            { label: "Around session 12", desc: "More refined, toned contour", pct: "Stage 3", img: gymStage3 },
           ].map((r, i) => (
             <div key={r.label} className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
               <div className="relative h-72 overflow-hidden">
@@ -363,8 +366,8 @@ function Index() {
                   Stage {i + 1}
                 </div>
                 <div className="absolute left-4 bottom-4 rounded-2xl bg-white/95 px-4 py-2 text-left shadow-soft backdrop-blur">
-                  <p className="font-display text-2xl font-semibold text-primary-deep leading-none">{r.pct}</p>
-                  <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">improvement</p>
+                  <p className="font-display text-lg font-semibold text-primary-deep leading-none">{r.pct}</p>
+                  <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">indicative</p>
                 </div>
               </div>
               <div className="p-6">
@@ -374,6 +377,9 @@ function Index() {
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-foreground">
+          Images are illustrative and not of named clients. Individual results vary and are not guaranteed.
+        </p>
       </section>
 
       {/* TESTIMONIALS — FLOATING COLLAGE */}

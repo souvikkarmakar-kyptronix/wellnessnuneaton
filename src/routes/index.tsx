@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, GraduationCap, ShieldCheck, Sparkles, Star, Check } from "lucide-react";
+import { ArrowRight, Award, GraduationCap, ShieldCheck, Sparkles, Star, Check, Instagram, Facebook, Heart, MessageCircle, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/lead-form";
 import { SectionHeader } from "@/components/section-header";

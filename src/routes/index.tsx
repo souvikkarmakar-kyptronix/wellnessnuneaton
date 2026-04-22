@@ -28,6 +28,9 @@ import client5 from "@/assets/client-5.jpg";
 import client6 from "@/assets/client-6.jpg";
 import client7 from "@/assets/client-7.jpg";
 import client8 from "@/assets/client-8.jpg";
+import gymStage1 from "@/assets/gym-stage-1.jpg";
+import gymStage2 from "@/assets/gym-stage-2.jpg";
+import gymStage3 from "@/assets/gym-stage-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -346,9 +349,9 @@ function Index() {
         <SectionHeader eyebrow="Real Results" title="Endosphere transformation timeline" subtitle="Visible improvement at every milestone — without injections or downtime." />
         <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3">
           {[
-            { label: "After 3 Sessions", desc: "Improved skin tone & firmness", pct: "30%", img: client3 },
-            { label: "After 6 Sessions", desc: "Visible cellulite reduction", pct: "60%", img: client5 },
-            { label: "After 12 Sessions", desc: "Sculpted, smooth contours", pct: "95%", img: client7 },
+            { label: "After 3 Sessions", desc: "Improved skin tone & firmness", pct: "30%", img: gymStage1 },
+            { label: "After 6 Sessions", desc: "Visible cellulite reduction", pct: "60%", img: gymStage2 },
+            { label: "After 12 Sessions", desc: "Sculpted, smooth contours", pct: "95%", img: gymStage3 },
           ].map((r, i) => (
             <div key={r.label} className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
               <div className="relative h-72 overflow-hidden">
